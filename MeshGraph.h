@@ -29,7 +29,7 @@ class MeshGraph
     std::vector<Vertex>                 vertices;
     std::vector<std::list<Vertex*> >     adjList;
 
-    // Do not remove this the tester will utilize this
+    // Tester will utilize this
     // to access the private parts.
     friend class HW3Tester;
 
