@@ -4,5 +4,5 @@
 
 int main(int argv, const char* argc[])
 {
-    // Can do testing here
+    // We can do testing here
 }
