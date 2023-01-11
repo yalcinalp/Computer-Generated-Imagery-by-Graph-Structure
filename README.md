@@ -4,7 +4,7 @@ Computer-generated 3D imagery which is implemented with Graph data structure,<br
 MeshGraph.cpp has functions which creates and also colorizes particular nodes and the edges, <br />
 BinaryHeap.cpp functions are helping the coloring process, <br />
 
-3D objects<br />
+3D objects:<br />
 Someone snowboarding: <br />
 ![Screenshot from 2023-01-11 18-30-00](https://user-images.githubusercontent.com/95969634/211882007-d05f215d-6052-4ff7-adfb-1233ff219ed1.png)
 <br />
