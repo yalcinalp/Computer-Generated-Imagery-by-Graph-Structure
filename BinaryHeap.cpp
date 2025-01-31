@@ -1,20 +1,15 @@
 #include "BinaryHeap.h"
 
-BinaryHeap::BinaryHeap()
-{
+BinaryHeap::BinaryHeap() {
     // Just going use vector named elements which is declared in BinaryHeap.h
 }
 
-bool BinaryHeap::Add(int uniqueId, double weight)
-{
+bool BinaryHeap::Add(int uniqueId, double weight) {
     int size = elements.size();
     int i = 0;
 
-    for (i = 0; i < size; i++)
-    {
-
-        if (elements[i].uniqueId == uniqueId)
-        {
+    for (i = 0; i < size; i++) {
+        if (elements[i].uniqueId == uniqueId) {
             return false;
         }
     }
@@ -33,9 +28,8 @@ bool BinaryHeap::Add(int uniqueId, double weight)
 
     // Bubble up part:
 
-    while (0 < hole && elements[hole].weight < elements[(hole - 1) / 2].weight)
-    {
-
+    while (0 < hole &&
+           elements[hole].weight < elements[(hole - 1) / 2].weight) {
         // Swap the parent and child:
         HeapElement tmp = elements[hole];
         elements[hole] = elements[(hole - 1) / 2];
@@ -48,11 +42,8 @@ bool BinaryHeap::Add(int uniqueId, double weight)
     return true;
 }
 
-bool BinaryHeap::PopHeap(int &outUniqueId, double &outWeight)
-{
-
-    if (elements.size() == 0)
-    {
+bool BinaryHeap::PopHeap(int &outUniqueId, double &outWeight) {
+    if (elements.size() == 0) {
         return false;
     }
 
@@ -65,26 +56,23 @@ bool BinaryHeap::PopHeap(int &outUniqueId, double &outWeight)
 
     // Bubble down:
 
-    int child = 1; // index of first child (left)
-    int hole = 0;  // start index of parent
+    int child = 1;  // index of first child (left)
+    int hole = 0;   // start index of parent
 
     HeapElement tmp = elements[hole];
 
-    for (; (hole * 2) + 1 < elements.size(); hole = child)
-    {
-
+    for (; (hole * 2) + 1 < elements.size(); hole = child) {
         child = (hole * 2) + 1;
 
-        if (child != elements.size() - 1 && elements[child + 1].weight < elements[child].weight)
+        if (child != elements.size() - 1 &&
+            elements[child + 1].weight < elements[child].weight)
             child++;
 
-        if (elements[child].weight < tmp.weight)
-        {
+        if (elements[child].weight < tmp.weight) {
             elements[hole] = elements[child];
         }
 
-        else
-        {
+        else {
             break;
         }
     }
@@ -94,61 +82,47 @@ bool BinaryHeap::PopHeap(int &outUniqueId, double &outWeight)
     return true;
 }
 
-bool BinaryHeap::ChangePriority(int uniqueId, double newWeight)
-{
-
+bool BinaryHeap::ChangePriority(int uniqueId, double newWeight) {
     int size = elements.size();
     int i = 0;
     double prev_val;
 
-    for (i = 0; i < size; i++)
-    {
-
-        if (elements[i].uniqueId == uniqueId)
-        {
-
+    for (i = 0; i < size; i++) {
+        if (elements[i].uniqueId == uniqueId) {
             prev_val = elements[i].weight;
             elements[i].weight = newWeight;
             break;
         }
     }
 
-    if (i == size)
-    {
+    if (i == size) {
         return false;
     }
 
-    else
-    {
-
+    else {
         // i is the index of the requested place:
 
-        if (prev_val < newWeight)
-        {
-
+        if (prev_val < newWeight) {
             // We need to bubble down
             // Bubble down:
 
-            int child;    // index of first child (left)
-            int hole = i; // start index of parent
+            int child;     // index of first child (left)
+            int hole = i;  // start index of parent
 
             HeapElement tmp = elements[hole];
 
-            for (; (hole * 2) + 1 < elements.size(); hole = child)
-            {
-
+            for (; (hole * 2) + 1 < elements.size(); hole = child) {
                 child = (hole * 2) + 1;
 
-                if (child != elements.size() - 1 && elements[child + 1].weight < elements[child].weight)
+                if (child != elements.size() - 1 &&
+                    elements[child + 1].weight < elements[child].weight)
                     child++;
 
-                if (elements[child].weight < tmp.weight)
-                {
+                if (elements[child].weight < tmp.weight) {
                     elements[hole] = elements[child];
                 }
 
-                else
-                {
+                else {
                     break;
                 }
             }
@@ -156,16 +130,14 @@ bool BinaryHeap::ChangePriority(int uniqueId, double newWeight)
             elements[hole] = tmp;
         }
 
-        else if (prev_val > newWeight)
-        {
+        else if (prev_val > newWeight) {
             // We need to bubble up
 
             // Bubble up part:
             int hole = i;
 
-            while (0 < hole && elements[hole].weight < elements[(hole - 1) / 2].weight)
-            {
-
+            while (0 < hole &&
+                   elements[hole].weight < elements[(hole - 1) / 2].weight) {
                 // Swap the parent and child:
                 HeapElement tmp = elements[hole];
                 elements[hole] = elements[(hole - 1) / 2];
@@ -180,23 +152,14 @@ bool BinaryHeap::ChangePriority(int uniqueId, double newWeight)
     return true;
 }
 
-int BinaryHeap::HeapSize() const
-{
-    return elements.size();
-}
+int BinaryHeap::HeapSize() const { return elements.size(); }
 
-bool BinaryHeap::is_it_there(int uniqueId)
-{
-
-    if (uniqueId >= elements.size() or uniqueId < 0)
-    {
-
+bool BinaryHeap::is_it_there(int uniqueId) {
+    if (uniqueId >= elements.size() or uniqueId < 0) {
         return false;
     }
 
-    else
-    {
-
+    else {
         return true;
     }
 }
