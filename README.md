@@ -1,8 +1,8 @@
 # MeshGraph-and-Binary-Heap-Implementation.
 
-Computer-generated 3D imagery, which is implemented through a Graph data structure,<br />
-MeshGraph.cpp has functions that create and also colorize particular nodes and edges, <br />
-BinaryHeap.cpp functions are helping the coloring process, <br />
+- Computer-generated 3D imagery, which is implemented through a Graph data structure,<br />
+- MeshGraph.cpp has functions that create and also colorize particular nodes and edges, <br />
+- BinaryHeap.cpp functions are helping the coloring process, <br />
 
 # 3D objects:<br />
 # Someone snowboarding: <br />
@@ -20,10 +20,9 @@ BinaryHeap.cpp functions are helping the coloring process, <br />
 
 ![Screenshot from 2023-01-11 18-36-27](https://user-images.githubusercontent.com/95969634/211882647-a4bd2675-43e2-466e-b445-31c58123e524.png)
 
-
-Adjacency list style of implementation is used for Graph <br />
-Edges are bi-directional <br />
-Binary heap Implementation helps to develop the shortest path algorithm on the MeshGraph data structure<br />
+- Adjacency list style of implementation is used for Graph <br />
+- Edges are bi-directional <br />
+- Binary heap Implementation helps to develop the shortest path algorithm on the MeshGraph data structure<br />
 
 ## Overview
 The project is designed to implement a graph data structure to represent and manipulate a 3D object. The project involves implementing a **binary heap data structure** to support efficient shortest path calculations and utilizing **various painting methods** to color 3D object vertices. This implementation requires working with **graph structures**, **Dijkstra's shortest path algorithm**, **breadth-first search (BFS)**, and **binary heap operations**.
