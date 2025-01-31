@@ -5,7 +5,7 @@ MeshGraph.cpp has functions that create and also colorize particular nodes and e
 BinaryHeap.cpp functions are helping the coloring process, <br />
 
 # 3D objects:<br />
-# Person snowboarding: <br />
+# Someone snowboarding: <br />
 ![Screenshot from 2023-01-11 18-30-00](https://user-images.githubusercontent.com/95969634/211882007-d05f215d-6052-4ff7-adfb-1233ff219ed1.png)
 <br />
 
