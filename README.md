@@ -117,21 +117,3 @@ Gaussian and Box filtering techniques are used to determine how colors propagate
 f(x) = e^(-x^2 / α^2)  // Gaussian Filter
 f(x) = 1 if -α ≤ x ≤ α, otherwise 0 // Box Filter
 ```
-
-## Usage
-### Running the Program
-The program processes input data in the form of **3D object vertex positions and edges** and executes various graph operations.
-
-### Example: Finding Shortest Path
-```cpp
-MeshGraph graph(vertexPositions, edges);
-std::vector<Color> colors;
-graph.PaintInBetweenVertex(colors, 0, 5, {255, 0, 0});
-```
-
-### Example: Coloring Range
-```cpp
-MeshGraph graph(vertexPositions, edges);
-std::vector<Color> colors;
-graph.PaintInRangeGeodesic(colors, 2, {0, 255, 0}, 3, FILTER_GAUSSIAN, 0.5);
-```
