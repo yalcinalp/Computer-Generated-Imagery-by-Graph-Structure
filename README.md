@@ -36,7 +36,16 @@ The project is designed to implement a graph data structure to represent and man
 There are key differences between the classic heap and this data structure. First of all, each element of this data structure is unique. This will be determined by the `uniqueId` variable on the heap elements. So, this data structure does not accept another element with the same unique id.
 It is important to mention that this data structure is implicitly a `min heap`; meaning that, the root of the data structure is the smallest item that is determined by the weight variable.
 
-#### Binary Heap API
+#### HeapElement Struct:
+```cpp
+struct HeapElement
+{
+    int     uniqueId;
+    double  weight;
+};
+```
+
+#### Binary Heap Class:
 ```cpp
 class BinaryHeap {
 private:
@@ -58,7 +67,7 @@ public:
 
 Graph holds its data in a dynamic array and an array of linked list. For these, the class utilizes `std::vector<T>` class and `std::list<T>` class from the Standard Template Library (STL). Graph class and its helper structures are declared in `MeshGraph.h` header file
 
-#### MeshGraph API
+#### MeshGraph Class:
 ```cpp
 class MeshGraph {
 private:
